@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
-    
+
 <head>
     <meta charset="utf-8 " />
     <title>Coucou madame</title>
     <meta name="description" content="" />
-    <link rel="stylesheet" href="css/presentation.css">
+    <link rel="stylesheet" href="css/presentation_incredible.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
     <div id="box">
         <div>
-            <h1>Salut les gens!</h1>
-            <h2>Tadaaa j'ai fini ma présentation:</h2>
-            <p>Ici je vous présente mes passe-temps:
-                <ol>
-                    <li>Améliorer <a href="https://www.nasa.gov/" class="link">mon site web</a></li>
-                    <li>La programmation de <a class="quote">RPG2</a> (alias <a class="quote">pourboire</a>)</li>
-                    <img src="images/rpg2.png"></img>
-                    <li>Travailler sur <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="link">ce projet</a></li>
-                </ol>
+            <div id="debut">
+                <h1>Salut les gens!</h1>
+                <h2>Tadaaa j'ai fini ma présentation:</h2>
+            </div>
+            <p id="passe_temps">Ici je vous présente mes passe-temps:
+            <ol>
+                <li>Améliorer <a href="https://www.nasa.gov/" class="link">mon site web</a></li>
+                <li>La programmation de <a class="quote">RPG2</a> (alias <a class="quote">pourboire</a>)</li>
+                <img src="images/rpg2.png"></img>
+                <li>Travailler sur <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="link">ce projet</a></li>
+            </ol>
             </p>
             <ul id="style">
                 <li><a href="#" rel="css/presentation.css" class="link">Dark mode</a></li>
@@ -31,8 +33,8 @@
 </body>
 
 <script>
-    $(document).ready(function() {
-        $("#style li a").click(function() {
+    $(document).ready(function () {
+        $("#style li a").click(function () {
             $("link").attr("href", $(this).attr('rel'));
             return false;
         });
