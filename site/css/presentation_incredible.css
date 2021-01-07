@@ -1,28 +1,41 @@
-@import url('https://fonts.googleapis.com/css?family=Play&display=swap');
 @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p|News+Cycle&display=swap');
-
-html {
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+html,
+body {
     margin: 0;
     padding: 0;
-    top: 0;
+    height: 100%;
+    width: 100%;
 }
 
 body {
-    font-family: 'M PLUS 1p', sans-serif;
+    /* font-family: 'M PLUS 1p', sans-serif; */
+    font-family: 'Comfortaa', cursive;
     font-size: 1.5em;
-    margin: 0;
-    padding: 0;
+    animation: rainbow 6s infinite;
+    background-attachment: fixed;
+    /* background-image: url("../images/rpg2.png"); */
 }
 
 h1 {
     text-decoration: underline;
     font-size: 3em;
+    margin: 0;
+}
+
+img {
+    margin: 20px;
+    border-radius: 10px;
+    /*animation: rotate .5s linear infinite;*/
+}
+
+li::marker {
+    color: rgb(150, 150, 150);
 }
 
 #home {
     height: 100vh;
     text-align: center;
-    animation: rainbow 6s infinite;
 }
 
 #home-inside {
@@ -31,12 +44,26 @@ h1 {
     transform: translateY(-50%);
 }
 
-#passe_temps {
-    text-align: center;
+#text-box {
+    width: 100%;
+    background-color: #050505;
+    color: #ffffff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#texte {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.incredible:hover {
+    animation: rainbow_text 3s infinite;
 }
 
 .link {
-    color: #ffffff;
+    color: #e7dd4f;
 }
 
 .link:hover {
@@ -47,19 +74,19 @@ h1 {
     font-style: italic;
 }
 
-#box {
-    background-color: #ff15ff;
-    margin: 0;
-    padding: 0;
-}
-img {
-    width: 500px;
-    /*animation: rotate .5s linear infinite;*/
+.invisible,
+.ultra_invisible {
+    /* animation: rainbow_text 6s infinite; */
+    color: #000000;
 }
 
+.ultra_invisible::selection {
+    color: #000000;
+}
 
 @keyframes rainbow {
-    100%, 0% {
+    100%,
+    0% {
         background-color: #ff15ff;
     }
     33.3% {
@@ -70,14 +97,15 @@ img {
     }
 }
 
-@keyframes rotate {
+@keyframes rainbow_text {
+    100%,
     0% {
-        transform: rotate(0deg);
+        color: #ff15ff;
     }
-    50% {
-        transform: rotate(180deg);
+    33.3% {
+        color: #ffff15;
     }
-    100% {
-        transform: rotate(360deg);
+    66.6% {
+        color: #15ffff;
     }
 }
