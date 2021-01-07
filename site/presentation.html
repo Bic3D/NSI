@@ -11,18 +11,21 @@
 
 <body>
     <div id="box">
-        <div>
-            <div id="debut">
-                <h1>Salut les gens!</h1>
-                <h2>Tadaaa j'ai fini ma présentation:</h2>
+        <div">
+            <div id="home">
+                <div id="home-inside">
+                    <h1>Salut les gens!</h1>
+                    <h2>Tadaaa j'ai fini ma présentation!</h2>
+                </div>
             </div>
+
             <p id="passe_temps">Ici je vous présente mes passe-temps:
-            <ol>
-                <li>Améliorer <a href="https://www.nasa.gov/" class="link">mon site web</a></li>
-                <li>La programmation de <a class="quote">RPG2</a> (alias <a class="quote">pourboire</a>)</li>
-                <img src="images/rpg2.png"></img>
-                <li>Travailler sur <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="link">ce projet</a></li>
-            </ol>
+                <ol>
+                    <li>Améliorer <a href="https://www.nasa.gov/" class="link">mon site web</a></li>
+                    <li>La programmation de <a class="quote">RPG2</a> (alias <a class="quote">pourboire</a>)</li>
+                    <img src="images/rpg2.png"></img>
+                    <li>Travailler sur <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="link">ce projet</a></li>
+                </ol>
             </p>
             <ul id="style">
                 <li><a href="#" rel="css/presentation.css" class="link">Dark mode</a></li>
@@ -33,8 +36,8 @@
 </body>
 
 <script>
-    $(document).ready(function () {
-        $("#style li a").click(function () {
+    $(document).ready(function() {
+        $("#style li a").click(function() {
             $("link").attr("href", $(this).attr('rel'));
             return false;
         });

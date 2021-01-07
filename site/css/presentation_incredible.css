@@ -1,20 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Play&display=swap');
 @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p|News+Cycle&display=swap');
+
+html {
+    margin: 0;
+    padding: 0;
+    top: 0;
+}
+
 body {
     font-family: 'M PLUS 1p', sans-serif;
     font-size: 1.5em;
-    animation: rainbow 6s infinite;
+    margin: 0;
+    padding: 0;
 }
-
-/* First image (Logo. Full height) */
-.bgimg-1 {
-    background-image: url('images/rpg2.png');
-    min-height: 100%;
-  }
 
 h1 {
     text-decoration: underline;
     font-size: 3em;
+}
+
+#home {
+    height: 100vh;
+    text-align: center;
+    animation: rainbow 6s infinite;
+}
+
+#home-inside {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#passe_temps {
+    text-align: center;
 }
 
 .link {
@@ -30,17 +48,18 @@ h1 {
 }
 
 #box {
-    margin-left: 5%;
+    background-color: #ff15ff;
+    margin: 0;
+    padding: 0;
 }
-
 img {
     width: 500px;
     /*animation: rotate .5s linear infinite;*/
 }
 
+
 @keyframes rainbow {
-    100%,
-    0% {
+    100%, 0% {
         background-color: #ff15ff;
     }
     33.3% {
