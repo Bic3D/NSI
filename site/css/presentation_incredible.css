@@ -26,6 +26,7 @@ h1 {
 img {
     margin: 20px;
     border-radius: 10px;
+    width: 80%;
     /*animation: rotate .5s linear infinite;*/
 }
 
