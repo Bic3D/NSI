@@ -44,6 +44,15 @@
                         <li><button onclick="answer(2, 2)">Option 2</button></li>
                         <li><button onclick="answer(2, 3)">Option 3 (la bonne)</button></li>
                     </ul>
+                    
+                    <a id="question">Question 3</a>
+                    <ul>
+                        <li><button onclick="answer(2, 1)">Option 1</button></li>
+                        <li><button onclick="answer(2, 2)">Option 2</button></li>
+                        <li><button onclick="answer(2, 3)">Option 3 (la bonne)</button></li>
+                    </ul>
+
+                    <a>Score: <a id="score">0/3<a></a>
                 </div>
             </div>
         </div>
@@ -51,14 +60,31 @@
 </body>
 
 <script>
-    const reponses = [1, 3, 2];
+    const reponses = [1, 3, 2]
+    var repondu = [0, 0, 0]
+    var reponses_info = ["C'était Option 1", "C'était Option 2", "C'était Option 3"] //les reponses quand on a faux
+    var score = 0
 
     function answer(question, numero) {
-        if (numero == reponses[question-1]) {
-            alert("Bonne reponse")
-        } else {
-            alert("mauvaise reponse")
+        question -= 1; // pour dédécaler
+
+        if (repondu[question] == 1) {
+            alert("Vous avez déjà répondu à cette question")
+            return;
         }
+        if (numero == reponses[question]) {
+            alert("Bonne reponse")
+            repondu[question] = 1; // la question a été répondue
+            score += 1;
+        } else {
+            alert("mauvaise reponse\n" + reponses_info[question])
+            repondu[question] = 1; // la question a été répondue
+        }
+
+        updateScore()
+    }
+    function updateScore() {
+        document.getElementById("score").textContent = score + "/" + reponses.length;
     }
 </script>
 
