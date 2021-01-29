@@ -26,11 +26,18 @@ h1 {
     margin: 0;
 }
 
-img {
-    margin: 20px;
-    border-radius: 10px;
-    width: 80%;
-    /*animation: rotate .5s linear infinite;*/
+.logo {
+    display: block;
+    margin: 0 auto;
+}
+
+.image {
+    display: block;
+    margin: 50px;
+}
+
+.questions {
+    margin-bottom: 50px;
 }
 
 li::marker {
