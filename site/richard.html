@@ -13,81 +13,33 @@
     <div id="box">
         <div id="home">
             <div id="home-inside">
-                <h1>RICHARD STALLMAN</h1>
-                <h2>notre dieu à tous</h2>
+                <h1><a class="highlighted">RICHARD STALLMAN</a></h1>
+                <h2><a class="highlighted">et les logiciels libres</a></h2>
             </div>
         </div>
 
         <div id="text-box">
             <div id="texte">
-                <p id="passe_temps">Richard Matthew Stallman, né le 16 mars 1953 à Manhattan, connu aussi sous les initiales rms (en minuscules1), est un programmeur et militant du logiciel libre. Initiateur du mouvement du logiciel libre, il lance, en 1983, le projet GNU
-                    et la licence publique générale GNU connue aussi sous le sigle GPL. Il a popularisé le terme anglais « copyleft » Programmeur renommé de la communauté informatique américaine et internationale, il a développé de nombreux logiciels
-                    dont les plus connus des développeurs sont l’éditeur de texte GNU Emacs, le compilateur C de GNU (GCC), le débogueur GNU (gdb) mais aussi, en collaboration avec Roland McGrath, le moteur de production GNU Make
+                <p>Richard Matthew Stallman (rms) est un programmeur né le 16 mars 1953 à Manhattan.
+                    <br>Il est considéré comme le père des logiciels libres.
+                    <br>
+                    <br>Il a créé, en 1983, le <a href="https://www.gnu.org/" class="link">projet GNU</a>, qui est un OS totalement libre.
+                    <br>C'est en fait la réunion du <a href="https://www.kernel.org/" class="link">kernel Linux</a> et de l'OS GNU qui a permis de créer le système d'exploitation complet appelé "GNU/Linux" (ou plus souvent "Linux").
+                    <img src="images/GNU.png" class="logo">
+                    <br> Richard est aussi un très grand programmeur et a développé beaucoup de logiciels, comme
+                    <a href="https://gcc.gnu.org/" class="link">le compilateur C de GNU</a> (GCC),
+                    <a href="https://www.gnu.org/software/gdb/" class="link">GNU Debugger</a> (GDB), ou l'editeur de texte <a href="https://www.gnu.org/software/emacs/" class="link">GNU Emacs</a>.
                 </p>
-                <img src="images/GNU.png" class="logo">
+                <p>
+                    Cliquez sur le ventre de richard pour accéder au QCM
+                </p>
 
-                <p>Participez à ce petit QCM pour tester vos conaissances:</p>
-                <div id="QCM">
-                    <div id="questions">
-                        <a id="question">Question 1</a>
-                        <ul>
-                            <li><button onclick="answer(1, 1)">Option 1 (la bonne)</button></li>
-                            <li><button onclick="answer(1, 2)">Option 2</button></li>
-                            <li><button onclick="answer(1, 3)">Option 3</button></li>
-                        </ul>
+                <a href="richardQCM.html" class="link"><img src="images\richard_pose.jpg" class="image"></img>
+                </a>
 
-                        <a id="question">Question 2</a>
-                        <ul>
-                            <li><button onclick="answer(2, 1)">Option 1</button></li>
-                            <li><button onclick="answer(2, 2)">Option 2</button></li>
-                            <li><button onclick="answer(2, 3)">Option 3 (la bonne)</button></li>
-                        </ul>
-
-                        <a id="question">Question 3</a>
-                        <ul>
-                            <li><button onclick="answer(2, 1)">Option 1</button></li>
-                            <li><button onclick="answer(2, 2)">Option 2</button></li>
-                            <li><button onclick="answer(2, 3)">Option 3 (la bonne)</button></li>
-                        </ul>
-
-                        <a>Score: <a id="score">0/3<a></a>
-                    </div>
-                    <img src="images\richard_pose.jpg" class="image"></img>
-
-                </div>
             </div>
         </div>
     </div>
 </body>
-
-<script>
-    const reponses = [1, 3, 2]
-    var repondu = [0, 0, 0]
-    var reponses_info = ["C'était Option 1", "C'était Option 2", "C'était Option 3"] //les reponses quand on a faux
-    var score = 0
-
-    function answer(question, numero) {
-        question -= 1; // pour dédécaler
-
-        if (repondu[question] == 1) {
-            alert("Vous avez déjà répondu à cette question")
-            return;
-        }
-        if (numero == reponses[question]) {
-            alert("Bonne reponse")
-            repondu[question] = 1; // la question a été répondue
-            score += 1;
-        } else {
-            alert("mauvaise reponse\n" + reponses_info[question])
-            repondu[question] = 1; // la question a été répondue
-        }
-
-        updateScore()
-    }
-
-    function updateScore() {
-        document.getElementById("score").textContent = score + "/" + reponses.length;
-    }
-</script>
 
 </html>

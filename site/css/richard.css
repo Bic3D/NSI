@@ -28,12 +28,12 @@ h1 {
 
 .logo {
     display: block;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 .image {
     display: block;
-    margin: 50px;
+    margin: 50px auto;
 }
 
 .questions {
@@ -93,6 +93,12 @@ li::marker {
 
 .ultra_invisible::selection {
     color: #000000;
+}
+
+.highlighted {
+    background-color: #0000005b;
+    border-spacing: 10px;
+    border-radius: 5px;
 }
 
 @keyframes rainbow {
