@@ -36,6 +36,12 @@ h1 {
     margin: 50px auto;
 }
 
+.banner {
+    display: block;
+    margin: 50px auto;
+    width: 100%;
+}
+
 .questions {
     margin-bottom: 50px;
 }
