@@ -17,9 +17,9 @@
                     Testez notre super calculette qui calcule UNIQUEMENT les prix TTC!!
                     <br>
                     <input id="HT" type="text">
-                    <input type="button" value="Valider" onclick="calculerTTC()">
+                    <!--input type="button" value="Valider" onclick="calculerTTC()"-->
                     <br>
-                    Resultat: <span id="resultat"></span>
+                    Montant TTC: <span id="resultat"></span>
                 </p>
             </div>
         </div>
@@ -27,10 +27,12 @@
 </body>
 
 <script>
+    setInterval(calculerTTC, 10)
+
     function calculerTTC() {
-        console.log("kdsjf")
         let HT = document.getElementById('HT').value;
         TTC = HT * 1.2
+        TTC = (Math.round((TTC + Number.EPSILON) * 100) / 100).toFixed(2);
         document.getElementById('resultat').innerHTML = TTC;
     }
 </script>
