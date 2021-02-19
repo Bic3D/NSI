@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8 " />
+    <title>Calculette TTC</title>
+    <link rel="icon" type="image/gif" href="images/logo.png" />
+    <meta name="description" content="" />
+    <!--link rel="stylesheet" href="css/richard.css"-->
+</head>
+
+<body>
+    <div id="box">
+        <div id="text-box">
+            <div id="texte">
+                <p>
+                    Testez notre super calculette qui calcule UNIQUEMENT les prix TTC!!
+                    <br>
+                    <input id="HT" type="text">
+                    <!--input type="button" value="Valider" onclick="calculerTTC()"-->
+                    <br>
+                    Montant TTC: <span id="resultat"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    setInterval(calculerTTC, 10)
+
+    function calculerTTC() {
+        let HT = document.getElementById('HT').value;
+        TTC = HT * 1.2
+        TTC = (Math.round((TTC + Number.EPSILON) * 100) / 100).toFixed(2);
+        document.getElementById('resultat').innerHTML = TTC;
+    }
+</script>
+
+</html>

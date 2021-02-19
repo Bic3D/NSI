@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+    <link rel="icon" type="image/gif" href="images/logo.png" />
+    <title>Cadre</title>
+    <style>
+        #monCanvas {
+            border: 15px inset blue;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="monCanvas" width="1000" height="650"></canvas>
+
+    <script>
+        var ctx = document.getElementById("monCanvas").getContext("2d");
+        var coteCarre = 100;
+        var vitesse = 5;
+        var xCarre = 0;
+        var yCarre = 0;
+        var timerAnim = setInterval(boucleAnim, 10);
+
+        function boucleAnim() {
+            dessineCanvas();
+            bougeCarre();
+        }
+
+        function dessineCanvas() {
+            ctx.clearRect(0, 0, document.getElementById("monCanvas").width, document.getElementById("monCanvas").height);
+            ctx.fillRect(xCarre, yCarre, coteCarre, coteCarre);
+        }
+
+        function bougeCarre() {
+            xCarre = xCarre + vitesse;
+        }
+    </script>
+
+
+</body>
+
+</html>
