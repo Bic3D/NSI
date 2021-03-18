@@ -19,11 +19,24 @@ body {
     border-width: 10px;
 }
 
-input,
-button {
+.full {
     font-size: 30px;
     margin: 5px;
     width: 90%;
+    padding: 0;
+}
+
+.lang {
+    text-align: left;
+    margin: 0 0 0 30%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+p {
+    margin: 5px 0;
 }
 
 h1 {
