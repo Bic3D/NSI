@@ -3,41 +3,50 @@
 
 <head>
     <meta charset="utf-8 " />
-    <title>Coucou madame</title>
+    <title>You got stickbugged lol</title>
+    <link rel="icon" type="image/gif" href="images/stickbugged.gif" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="css/presentation.css">
+    <link rel="stylesheet" href="css/presentation_incredible.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
     <div id="box">
-        <div>
-            <h1>Salut les gens!</h1>
-            <h2>Tadaaa j'ai fini ma présentation:</h2>
-            <p>Ici je vous présente mes passe-temps:
-                <ol>
-                    <li>Améliorer <a href="https://www.nasa.gov/" class="link">mon site web</a></li>
-                    <li>La programmation de <a class="quote">RPG2</a> (alias <a class="quote">pourboire</a>)</li>
-                    <img src="images/rpg2.png"></img>
-                    <li>Travailler sur <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="link">ce projet</a></li>
-                </ol>
-            </p>
-            <ul id="style">
-                <li><a href="#" rel="css/presentation.css" class="link">Dark mode</a></li>
-                <li><a href="#" rel="css/presentation_incredible.css" class="link">INCREDIBLE MODE</a></li>
-            </ul>
+        <div id="home">
+            <div id="home-inside">
+                <h1>Salut les gens!</h1>
+                <h2>Tadaaa j'ai fini ma présentation!</h2>
+            </div>
+        </div>
+
+        <div id="text-box">
+            <div id="texte">
+                <p id="passe_temps">Ici je vous présente mes passe-temps: <a class="invisible">LA REPONSE EST 42!!</a>
+                    <ul id="passe">
+                        <li>Améliorer <a href="https://www.nasa.gov/" class="link ">mon site web</a></li>
+                        <li>La programmation de <a class="quote ">RPG2</a> (alias <a class="quote ">pourboire</a>)</li>
+                        <img src="images/rpg2.png"></img>
+                        <li>Travailler sur <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="link ">ce projet</a></li>
+                    </ul>
+                </p>
+                <a>Changez le theme  en cliquant juste en dessous!!</a>
+                <ul id="style">
+                    <li><a href="#" rel="css/presentation.css" class="link" id="dark_mode">Dark mode</a></li>
+                    <li><a href="#" rel="css/presentation_incredible.css" class="link incredible" id="incred_mode">INCREDIBLE MODE</a></li>
+                </ul>
+                <a class="ultra_invisible">héhé tu l'avais pas vu celui là</a>
+            </div>
         </div>
     </div>
 </body>
 
 <script>
     $(document).ready(function() {
-        $("#style li a").click(function() {
+        $("#style li a ").click(function() {
             $("link").attr("href", $(this).attr('rel'));
             return false;
         });
     });
 </script>
-
 
 </html>

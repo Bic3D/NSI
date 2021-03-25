@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8 " />
+    <title>Richard Stallman - le site incroyable de Baptiste</title>
+    <link rel="icon" type="image/gif" href="images/logo.png" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="css/richard.css">
+</head>
+
+<body>
+    <div id="box">
+        <div id="home">
+            <div id="home-inside">
+                <h1><a class="highlighted">RICHARD STALLMAN</a></h1>
+                <h2><a class="highlighted">et les logiciels libres</a></h2>
+            </div>
+        </div>
+
+        <div id="text-box">
+            <div id="texte">
+                <p>Participez à ce petit QCM pour vérifier ce que vous avez appris:</p>
+                <div id="QCM">
+                    <div id="questions">
+                        <a id="question">Dans quel domaine Richard Stallman travaillait au MIT?</a>
+                        <ul>
+                            <li><button onclick="answer(1, 1)">dans l'IA</button></li>
+                            <li><button onclick="answer(1, 2)">dans le développement web</button></li>
+                            <li><button onclick="answer(1, 3)">dans le service de la cantine</button></li>
+                        </ul>
+
+                        <a id="question">Qui a créé le noyau utilisé dans les OS de GNU (Linux kernel)</a>
+                        <ul>
+                            <li><button onclick="answer(2, 1)">Barack Obama</button></li>
+                            <li><button onclick="answer(2, 2)">Elon Musk</button></li>
+                            <li><button onclick="answer(2, 3)">Linus Torvalds</button></li>
+                            <li><button onclick="answer(2, 4)">Larry Page</button></li>
+                        </ul>
+
+                        <a id="question">Qu'est ce qui a déclenché le combat de Richard pour les logiciels libres?</a>
+                        <ul>
+                            <li><button onclick="answer(3, 1)">Une machine à café</button></li>
+                            <li><button onclick="answer(3, 2)">Un article web</button></li>
+                            <li><button onclick="answer(3, 3)">Une imprimante</button></li>
+                        </ul>
+
+                        <a>Score: <a id="score">0/3<a></a>
+                    </div>
+                </div>
+                <br>
+                <a href="richard.html" class="link">> Retour à la page principale</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const reponses = [1, 3, 3]
+    var repondu = [0, 0, 0]
+    var reponses_info = ["Il a étudié au MIT patate", "Serieux comment t'as pu te louper! C'est tim évidemment", "C'était une imprimante, oui"] //les reponses quand on a faux
+    var score = 0
+
+    function answer(question, numero) {
+        question -= 1; // pour dédécaler
+
+        if (repondu[question] == 1) {
+            alert("Vous avez déjà répondu à cette question")
+            return;
+        }
+        if (numero == reponses[question]) {
+            alert("Bonne reponse")
+            repondu[question] = 1; // la question a été répondue
+            score += 1;
+        } else {
+            alert("mauvaise reponse\n" + reponses_info[question])
+            repondu[question] = 1; // la question a été répondue
+        }
+
+        updateScore()
+    }
+
+    function updateScore() {
+        document.getElementById("score").textContent = score + "/" + reponses.length;
+    }
+</script>
+
+</html>

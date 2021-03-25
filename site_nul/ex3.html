@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Truc en PHP</title>
+    <link type="text/css" href="form.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <div id="milieu">
+        <div id="milieu-inside">
+            <h1>Formulaire pour les gens</h1>
+            <form method="post" name="my_form">
+                <input name="champ_nom" placeholder="Nom" type="text" class="full" />
+                <br>
+                <input name="champ_prenom" placeholder="Prenom" type="text" class="full" />
+                <br>
+                <p class="full">Classe:</p>
+                <select name="champ_classe" class="full">
+                    <option value="NSI 1">NSI 1</option>
+                    <option value="NSI 2">NSI 2</option>
+                    <option value="NSI 3">NSI 3</option>
+                    <option value="NSI 4">NSI 4</option>
+                  </select>
+                <br>
+                <p>Langages connus:</p>
+                <!--select name="champ_langages">
+                    <option value="Python">Python</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="HTML">HTML</option>
+                    <option value="PHP">PHP</option>
+                    <option value="MySQL">MySQL</option>
+                  </select-->
+                <div class="lang">
+                    <input type="checkbox" name="langage1" value="Python">
+                    <label for="python"> Python</label><br>
+                    <input type="checkbox" name="langage2" value="Javascript">
+                    <label for="js"> Javascript</label><br>
+                    <input type="checkbox" name="langage3" value="HTML">
+                    <label for="html">HTML</label><br>
+                    <input type="checkbox" name="langage3" value="HTML">
+                    <label for="html">HTML</label><br>
+                </div>
+                <p>Projet dans le monde numérique:</p>
+                <textarea name="champ_projet" class="full"></textarea>
+                <br>
+                <button type="button" onclick="window.location.href='ok.html'" class="full">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

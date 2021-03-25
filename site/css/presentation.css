@@ -30,3 +30,34 @@ h1 {
 img {
     width: 500px;
 }
+
+.incredible {
+    animation: rainbow_text 3s infinite;
+}
+
+.invisible,
+.ultra_invisible {
+    /* animation: rainbow_text 6s infinite; */
+    color: #222222;
+}
+
+.ultra_invisible {
+    color: #222222;
+}
+
+.ultra_invisible::selection {
+    color: #222222;
+}
+
+@keyframes rainbow_text {
+    100%,
+    0% {
+        color: #ff15ff;
+    }
+    33.3% {
+        color: #ffff15;
+    }
+    66.6% {
+        color: #15ffff;
+    }
+}
