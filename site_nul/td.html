@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ouais un exo</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/td/style1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="zone1">
+        <div class="slot1 real">
+            <h4>
+                <a href="#" rel="css/td/style2.css">zone 1</a>
+            </h4>
+        </div>
+        <div class="slot2 fake">
+        </div>
+        <div class="slot3 fake">
+        </div>
+        <div class="slot4 fake">
+        </div>
+    </div>
+
+    <div id="zone2">
+        <div class="slot1 real">
+            <h4>
+                <a href="#" rel="css/td/style1.css">zone 2</a>
+            </h4>
+        </div>
+        <div class="slot2 fake">
+        </div>
+        <div class="slot3 fake">
+        </div>
+        <div class="slot4 fake">
+        </div>
+    </div>
+
+    <div id="zone3">
+        <div class="slot1 fake">
+        </div>
+        <div class="slot2 fake">
+        </div>
+        <div class="slot3 real">
+            <h4>
+                <a href="#" rel="css/td/style1.css">zone 3</a>
+            </h4>
+        </div>
+        <div class="slot4 fake">
+        </div>
+    </div>
+
+    <div id="zone4">
+        <div class="slot1 fake">
+        </div>
+        <div class="slot2 fake">
+        </div>
+        <div class="slot3 real">
+            <h4>
+                <a href="#" rel="css/td/style2.css">zone 4</a>
+            </h4>
+        </div>
+        <div class="slot4 fake">
+        </div>
+    </div>
+
+</body>
+
+<script>
+    csspage = "";
+
+    $(document).ready(function() {
+        $("a").click(function() {
+            $("link").attr("href", $(this).attr('rel'));
+            csspage = $(this).attr('rel');
+            colorChange()
+            return false;
+        });
+    });
+
+    function AutoRandomColor(Dclass) {
+        var testElements = document.getElementsByClassName(Dclass);
+        var testDivs = Array.prototype.filter.call(testElements, function(testElement) {
+            return testElement.nodeName === 'DIV';
+        });
+
+        testDivs.forEach(function(div) {
+            var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            div.style.backgroundColor = randomColor;
+        });
+    }
+
+    function colorChange() {
+        if (csspage == "css/td/style2.css") {
+            AutoRandomColor("fake")
+            AutoRandomColor("real")
+        } else {
+            location.reload();
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Truc en PHP</title>
+    <link type="text/css" href="css/rps.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+
+<body>
+    <div id="milieu">
+        <div id="milieu-inside">
+            <p>Make your choice...</p>
+            <div>
+                <a href="#" onclick="choose('rock')">
+                    <img src="img/rock.png"></img>
+                </a>
+                <a href="#" onclick="choose('paper')">
+                    <img src="img/paper.png"></img>
+                </a>
+                <a href="#" onclick="choose('scissors')">
+                    <img src="img/scissors.png"></img>
+                </a>
+            </div>
+            <br>
+            <div>
+                <p>The computer has chosen:</p>
+                <img src="img/unknown.png" id="pc_choice"></img>
+            </div>
+            <br>
+            <div>
+                <p>Result:
+                    <span id="result"></span>
+                </p>
+            </div>
+            <br>
+            <div>
+                <p>Score: <a href="#" onclick="resetScore()" class="link">(reset)</a></p>
+                <p id="score">0 - 0</p>
+                <br>
+                <p style="text-decoration: underline;">stats</p>
+                <p id="draws">draws: 0</p>
+                <p id="winstreak">winstreak: 0</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const items = [
+        ['rock', 'scissors', 'paper'],
+        ['paper', 'rock', 'scissors'],
+        ['scissors', 'paper', 'rock']
+    ]
+
+    var player_item = "";
+    var playerScore = 0;
+    var pcScore = 0;
+    lastwinner = "";
+    winstreak = 0;
+    winstreaker = "";
+
+    draws = 0;
+
+    blockclick = false;
+
+    function choose(item) {
+        if (!blockclick) {
+            let unknown = document.getElementById('pc_choice');
+            unknown.setAttribute("src", "img/unknown.png");
+            unknown.classList.add("spin");
+            document.getElementById("result").innerHTML = "";
+
+            player_item = item;
+            setTimeout(play, 2500);
+            blockclick = true;
+        }
+    }
+
+    function play() {
+        blockclick = false;
+
+        let unknown = document.getElementById('pc_choice');
+        unknown.classList.remove("spin");
+
+        // the computer chooses a random item
+        let pc_item = items[Math.floor(Math.random() * items.length)];
+        document.getElementById('pc_choice').setAttribute("src", "img/" + pc_item[0] + ".png");
+
+        if (pc_item[0] == player_item) {
+            document.getElementById("result").innerHTML = "DRAW";
+            draws += 1;
+            lastwinner = "";
+            winstreak = 0;
+        } else if (pc_item[1] == player_item) {
+            document.getElementById("result").innerHTML = "THE COMPUTER WON";
+            pcScore += 1;
+
+            if (lastwinner == "computer") {
+                winstreak += 1;
+                winstreaker = "computer";
+            } else {
+                lastwinner = "computer";
+                winstreak = 0;
+            }
+
+        } else {
+            document.getElementById("result").innerHTML = "YOU WON";
+            playerScore += 1;
+
+            if (lastwinner == "you") {
+                winstreak += 1;
+                winstreaker = "you";
+            } else {
+                lastwinner = "you";
+                winstreak = 0;
+            }
+        }
+
+        updateScore();
+    }
+
+    function updateScore() {
+        document.getElementById("score").innerHTML = playerScore + " - " + pcScore;
+        document.getElementById("draws").innerHTML = "draws: " + draws + "";
+
+        winstreak_text = "winstreak: " + winstreak;
+        if (winstreak != 0) {
+            winstreak_text += " (" + winstreaker + ")";
+        }
+
+        document.getElementById("winstreak").innerHTML = winstreak_text;
+    }
+
+    function resetScore() {
+        playerScore = pcScore = draws = winstreak = 0;
+        updateScore();
+
+        let unknown = document.getElementById('pc_choice');
+        unknown.setAttribute("src", "img/unknown.png");
+        unknown.classList.add("spin");
+        document.getElementById("result").innerHTML = "";
+    }
+</script>
+
+</html>

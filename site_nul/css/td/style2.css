@@ -1,0 +1,101 @@
+/**** element styles ****/
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover {
+    background: #755E23;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+h4 {
+    margin: 10px;
+    font-size: 1.3em;
+    font-family: sans-serif;
+    color: #ffffff;
+    font-weight: normal;
+    text-align: center;
+}
+
+#zone1 {
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#zone2 {
+    background-color: #00ff00;
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#zone3 {
+    background-color: #0000ff;
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#zone4 {
+    background-color: #000000;
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.slot1 {
+    background-color: #d64d4d;
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.slot2 {
+    background-color: #37becf;
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+.slot3 {
+    background-color: #c96fd1;
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+
+.slot4 {
+    background-color: #5dc966;
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
