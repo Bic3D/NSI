@@ -6,4 +6,4 @@ Du coup **c'est mes devoirs ici**.
 
 J'en ai rien à faire que ce soit pas privé du coup vous pouvez les cloner sans problème même si c'est pas une très bonne idée.
 
-Tout ces fichiers sont aussi hostés sur mon site (piggyisland.fr), voici le lien de la présentation: https://piggyisland.fr/NSI/site/presentation.html.
+Pour les gens de NSI qui veulent copier tout ce que j'ai fait pour ne pas travailler: aaaaaah c'est pas bien gros flemmards.
