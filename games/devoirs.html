@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Exo nul</title>
+    <link type="text/css" href="css/rps.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+
+<body>
+    <div id="milieu">
+        <div id="milieu-inside">
+            <p>Make your choice...</p>
+            <div>
+                <label for="Symbol">Choose: </label><br>
+                <input type="radio" name="SymbolRadio" value="rock" checked> Rock
+                <input type="radio" name="SymbolRadio" value="paper" checked> Paper
+                <input type="radio" name="SymbolRadio" value="Scissors"> Scissors
+
+                <br>
+                <br>
+
+                <select id="SymbolDropdown" class="full">
+                    <option value="Rock">Rock</option>
+                    <option value="Paper" selected="selected">Paper</option>
+                    <option value="Scissors">Scissors</option>
+                </select>
+                <br>
+                <button onclick="show()" class="full">Ok</button>
+                <br>
+                <br>
+                <span id="show"></span>
+                <br>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    show()
+
+    function show() {
+        let radios = document.getElementsByName('SymbolRadio');
+        radio = "";
+        dropdown = document.getElementById("SymbolDropdown").value;
+
+        for (let i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                // do whatever you want with the checked radio
+                radio = radios[i].value;
+
+                // only one radio can be logically checked, don't check the rest
+                break;
+            }
+        }
+
+        text = "Selected Radio is: " + radio + "<br>Selected Dropdown item is: " + dropdown;
+        document.getElementById("show").innerHTML = text;
+
+    }
+</script>
+
+</html>
