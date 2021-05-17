@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
 import bin
 
-print(bin.binary(10))
+while True:
+    print(bin.binary(int(input("Entrez un nombre: "))))
