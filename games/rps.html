@@ -6,7 +6,6 @@
     <title>Truc en PHP</title>
     <link type="text/css" href="css/rps.css" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
 </head>
 
 <body>
@@ -102,8 +101,9 @@
                 winstreak += 1;
                 winstreaker = "computer";
             } else {
+                winstreaker = "computer";
+                winstreak = 1;
                 lastwinner = "computer";
-                winstreak = 0;
             }
 
         } else {
@@ -115,7 +115,8 @@
                 winstreaker = "you";
             } else {
                 lastwinner = "you";
-                winstreak = 0;
+                winstreak = 1;
+                winstreaker = "you";
             }
         }
 
